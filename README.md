@@ -26,39 +26,39 @@ This system solves that by providing a simple, offline, and beginner-friendly in
   - Uses security questions if available.
   - If not, challenges the user with fake product or fake feature quiz.
   - Escalating lock-out timer for repeated failures (5 min → 10 min → 30 min → 1 h → 8 h → … → century 😅).
- - Manage Account Menu
+- Manage Account Menu
   - Change password instantly.
   - Add or update security questions.
   - View account info.
- - Erase All Data
+- Erase All Data
   - Deletes every record (users, inventory, orders, receipts) and starts fresh.
 
 # 📦 Inventory Management
- - Add Products with name, category, price, and quantity.
- - Update Products professionally (clean summary layout).
- - Delete Products safely with confirmation.
- - Undo Last Change for accidental edits.
- - Search Products by name (shows full details).
- - Low Stock Alerts
+- Add Products with name, category, price, and quantity.
+- Update Products professionally (clean summary layout).
+- Delete Products safely with confirmation.
+- Undo Last Change for accidental edits.
+- Search Products by name (shows full details).
+- Low Stock Alerts
   - 🔴 Below 20 → Low
   - 🟡 20–99 → Moderate
   - 🟢 100 + → Good Stock
- - Export Inventory to JSON (with cancel option).
+- Export Inventory to JSON (with cancel option).
 
 # 🧾 Order Management
- - Create Orders
+- Create Orders
   - View available products and add to cart. 
   - Optional 10 % discount for orders > $20.
   - Calculates subtotal, tax (5 %), discount, and total.
   - Generates text receipt file automatically.
- - Order Management Menu
+- Order Management Menu
 ```
 1. View Orders
 2. Modify Order
 3. Delete Order
 4. Back
 ```
- - Modify or Delete Orders
+- Modify or Delete Orders
   - Shows order summaries (ID, user, date, products, total).
   - Allows edits within 1 hour of creation.
   - Displays time left or marks as Expired.
@@ -66,10 +66,10 @@ This system solves that by providing a simple, offline, and beginner-friendly in
   - Automatic Cleanup of expired orders (if enabled).
 
 # ⚙️ System Management
- - Erase-All Function on both Login & Account menus.
- - Instant Data Refresh – password or data changes apply immediately.
- - Cancel Option in every major action.
- - Auto Initialization – creates default admin (admin / 1234) on first run.
+- Erase-All Function on both Login & Account menus.
+- Instant Data Refresh – password or data changes apply immediately.
+- Cancel Option in every major action.
+- Auto Initialization – creates default admin (admin / 1234) on first run.
 
 ---
    
