@@ -20,9 +20,9 @@ This system solves that by providing a simple, offline, and beginner-friendly in
 
 # Features and Their Explanations
 # 🧍 User Account & Security
- - Create New Account – Register new users directly from the login screen.
- - Login System – Secure login for each user.
- - Forgot Password / Recovery
+- Create New Account – Register new users directly from the login screen.
+- Login System – Secure login for each user.
+- Forgot Password / Recovery
   - Uses security questions if available.
   - If not, challenges the user with fake product or fake feature quiz.
   - Escalating lock-out timer for repeated failures (5 min → 10 min → 30 min → 1 h → 8 h → … → century 😅).
