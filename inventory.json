@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Banana",
+    "category": "Fruit",
+    "price": 1.0,
+    "quantity": 1992
+  },
+  {
+    "name": "Apple",
+    "category": "Fruit",
+    "price": 2.0,
+    "quantity": 1996
+  },
+  {
+    "name": "Mango",
+    "category": "Fruit",
+    "price": 2.0,
+    "quantity": 2100
+  },
+  {
+    "name": "Carrot",
+    "category": "Vegetable",
+    "price": 1.2,
+    "quantity": 1200
+  }
+]

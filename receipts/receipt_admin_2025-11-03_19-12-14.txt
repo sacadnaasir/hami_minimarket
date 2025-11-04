@@ -1,0 +1,13 @@
+Hami MiniMarket - Receipt
+Order ID: ORD_002
+User: admin
+Timestamp: 2025-11-03 19:14:10
+
+Name           Qty   Price     Line        
+--------------------------------------------------
+Banana         8     1.00      8.00        
+--------------------------------------------------
+Subtotal: $8.00
+Tax: $0.40
+Discount: $0.00
+Total: $8.40

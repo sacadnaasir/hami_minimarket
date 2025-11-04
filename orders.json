@@ -1,0 +1,41 @@
+[
+  {
+    "order_id": "ORD_001",
+    "username": "admin",
+    "products": [
+      {
+        "name": "Banana",
+        "price": 1.0,
+        "quantity": 0
+      },
+      {
+        "name": "Apple",
+        "price": 2.0,
+        "quantity": 4
+      }
+    ],
+    "subtotal": 8.0,
+    "tax": 0.4,
+    "discount": 0.0,
+    "total": 8.4,
+    "timestamp": "2025-11-03 09:47:01",
+    "receipt_file": "receipt_admin_2025-11-03_09-31-52.txt"
+  },
+  {
+    "order_id": "ORD_002",
+    "username": "admin",
+    "products": [
+      {
+        "name": "Banana",
+        "price": 1.0,
+        "quantity": 8
+      }
+    ],
+    "subtotal": 8.0,
+    "tax": 0.4,
+    "discount": 0.0,
+    "total": 8.4,
+    "timestamp": "2025-11-03 19:14:10",
+    "receipt_file": "receipt_admin_2025-11-03_19-12-14.txt"
+  }
+]

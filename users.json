@@ -1,0 +1,16 @@
+[
+  {
+    "username": "admin",
+    "password": "1234",
+    "security": [],
+    "lock_until": 0,
+    "fail_count": 0
+  },
+  {
+    "username": "sacad",
+    "password": "1234",
+    "security": [],
+    "lock_until": 0,
+    "fail_count": 0
+  }
+]

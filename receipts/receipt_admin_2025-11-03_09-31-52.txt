@@ -1,0 +1,14 @@
+Hami MiniMarket - Receipt
+Order ID: ORD_001
+User: admin
+Timestamp: 2025-11-03 09:47:01
+
+Name           Qty   Price     Line Total  
+--------------------------------------------------
+Banana         0     1.00      0.00        
+Apple          4     2.00      8.00        
+--------------------------------------------------
+Subtotal: $8.00
+Tax (5%): $0.40
+Discount: $0.00
+Total: $8.40
