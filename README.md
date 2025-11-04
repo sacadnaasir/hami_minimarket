@@ -2,8 +2,7 @@
 # Hami MiniMarket Inventory System
 
 # Overview
-The Hami MiniMarket Inventory System is a Python-based console application designed to help small shop owners or store managers track, organize, and manage their inventory efficiently.  
-It allows users to add, update, delete, search, view, and export product data, all saved automatically to a CSV file for easy access in Excel or other spreadsheet tools.
+Hami MiniMarket System is a Python-based console application that manages a small retail store’s inventory, orders, and user accounts with built-in security, data recovery, and automation features.
 
 This project was created as part of a Python Development Track, focusing on practical applications of file handling, loops, conditional logic, and clean code structuring.
 
@@ -12,34 +11,68 @@ This project was created as part of a Python Development Track, focusing on prac
 # Idea Behind the Project
 Small stores often rely on notebooks or memory to track stock, which leads to confusion, lost data, and inaccurate stock records.  
 This system solves that by providing a simple, offline, and beginner-friendly inventory manager that:
-- Keeps all products organized in one place.
-- Automatically saves data to a file.
-- Warns about low stock.
-- Supports undoing accidental actions.
-- Works perfectly on any computer with Python installed.
-
-It’s built around clarity, reliability, and simplicity — no databases, no installations, just Python and CSV.
+- Process and edit orders 🛒
+- Automatically generate receipts 🧾
+- Protect data with user accounts and recovery options 🔐
+- Reset or restart the system safely ⚙️
 
 ---
 
 # Features and Their Explanations
+# 🧍 User Account & Security
+ - Create New Account – Register new users directly from the login screen.
+ - Login System – Secure login for each user.
+ - Forgot Password / Recovery
+  - Uses security questions if available.
+  - If not, challenges the user with fake product or fake feature quiz.
+  - Escalating lock-out timer for repeated failures (5 min → 10 min → 30 min → 1 h → 8 h → … → century 😅).
+ - Manage Account Menu
+  - Change password instantly.
+  - Add or update security questions.
+  - View account info.
+ - Erase All Data
+  - Deletes every record (users, inventory, orders, receipts) and starts fresh.
 
-| Feature                           | Description                                                                                |
-|-----------------------------------|--------------------------------------------------------------------------------------------|
-|  **Add Product**                  |Lets the user add new products (Name and Category required). Validates input for price and quantity. Prevents duplicates and offers to update if item exist|
-|  **Update Product**               | Allows editing of any field (name, category, price, quantity). Blank fields mean “no change.” Confirms before saving changes.|
-|  **View Products**                | Displays all products neatly in table format, showing stock level indicators: 🔴 Low, 🟡 Moderate, 🟢 Good Stock. Also shows total count, quantity, and value.|
-|  **Delete Product**               | Removes a product completely after confirmation. Can be undone later.                      |
-|  **Search Product**               | Finds products by part of their name (case-insensitive search).                            |
-|  **Calculate Total Value**        | Calculates total worth of all items in stock.                                              |
-|  **Save & Load Data (CSV)**       | Automatically saves all products into a `inventory.csv` file and reloads them on next run. |
-|  **Export to CSV**                | Lets user export the inventory into a different CSV file (e.g., `export_inventory.csv`).   |
-|  **Undo Last Change**             | Reverts the last action (Add, Delete, or Update) to restore data easily.                   |
-|  **Cancel Anytime**               | Typing `cancel` during any input safely returns to the menu without breaking anything.     |
-|  **Stock Status Alerts**          | Items are categorized by quantity levels:- `< 20` → 🔴 Low Stock - `20–99` → 🟡 Moderate Stock - `≥ 100` → 🟢 Good Stock|
-|  **Clean & Non-Repetitive Code**  | The code uses helper functions for validation, cancel checking, pausing, and stock-level evaluation — making it easy to maintain and extend.|
+# 📦 Inventory Management
+ - Add Products with name, category, price, and quantity.
+ - Update Products professionally (clean summary layout).
+ - Delete Products safely with confirmation.
+ - Undo Last Change for accidental edits.
+ - Search Products by name (shows full details).
+ - Low Stock Alerts
+  - 🔴 Below 20 → Low
+  - 🟡 20–99 → Moderate
+  - 🟢 100 + → Good Stock
+ - Export Inventory to JSON (with cancel option).
 
+# 🧾 Order Management
+ - Create Orders
+  - View available products and add to cart. 
+  - Optional 10 % discount for orders > $20.
+  - Calculates subtotal, tax (5 %), discount, and total.
+  - Generates text receipt file automatically.
+ - Order Management Menu
+```
+1. View Orders
+2. Modify Order
+3. Delete Order
+4. Back
+```
+ - Modify or Delete Orders
+  - Shows order summaries (ID, user, date, products, total).
+  - Allows edits within 1 hour of creation.
+  - Displays time left or marks as Expired.
+  - Updates or deletes receipt files automatically.
+  - Automatic Cleanup of expired orders (if enabled).
 
+# ⚙️ System Management
+ - Erase-All Function on both Login & Account menus.
+ - Instant Data Refresh – password or data changes apply immediately.
+ - Cancel Option in every major action.
+ - Auto Initialization – creates default admin (admin / 1234) on first run.
+
+---
+   
 # How to Use (Step-by-Step)
 
 # Setup
@@ -57,123 +90,90 @@ It’s built around clarity, reliability, and simplicity — no databases, no in
 1. Open your terminal in the folder containing the file.  
 2. Run the script:
    ```bash
-   python Hamiminimarket.py
+   python main.py
    ```
-3. You’ll see a menu like this:
+3. Choose from login menu:
    ```
-   ====== Hami MiniMarket Inventory System ======
-   1. Add Product
-   2. View Products
-   3. Update Product
-   4. Calculate Total Value
-   5. Search Product
-   6. Delete Product
-   7. Undo Last Change
-   8. Export to CSV
-   9. Exit
-   ==============================================
+   1. Login
+   2. Create New Account
+   3. Forgot Password
+   4. Erase All Data & Start Fresh
+   5. Exit
    ```
-
+4. Once logged in you will see:
+   ```
+   1. View Inventory
+   2. Manage Inventory
+   3. Make New Order
+   4. Manage Orders
+   5. Export Inventory
+   6. Manage Account
+   7. Exit
+   ```
 ---
 
-# Example Usage
+# Examples
 
-# Adding a Product
+# Creating an Order
 ```
---- Add New Product ---
-Enter product name: Mango
-Enter category: Fruit
-Enter price: 2.5
-Enter quantity: 50
-✅ Mango added successfully!
-💾 You can undo this addition from the main menu.
-```
+Available products:
+1. Milk - $10.0 (1000 in stock)
+2. Mango - $1.0 (1000 in stock)
 
-**Result in `inventory.csv`:**
-```csv
-name,category,price,quantity
-Mango,Fruit,2.5,50
-```
+Enter product name to add (or 'done'): Milk
+Enter quantity (available 1000): 4
+✅ Added 4 x Milk to cart.
 
----
+Enter product name to add (or 'done'): done
+Apply 10% discount for orders over $20.0? (y/n): y
 
-# Updating a Product
-```
---- Update Existing Product ---
-Enter the product name to update: Mango
-New name: Mango
-New category: Fruit
-New price: 3
-New quantity: 60
-Save changes? (y/n): y
-✅ Product 'Mango' updated successfully!
-```
+Order summary:
+Subtotal: $40.00
+Tax (5%): $2.00
+Discount: $4.00
+Total: $38.00
 
----
-
-# Viewing Products
-```
---- Product List ---
-Name           Category       Price     Quantity  Status
---------------------------------------------------------------------
-Mango          Fruit          3.0       60        🟡 MODERATE STOCK
---------------------------------------------------------------------
-📊 Summary: 1 products | Total Qty: 60 | Value: $180.00
+Confirm order and reduce inventory? (y/n): y
+✅ Receipt saved: receipts/receipt_admin_2025-11-03_10-35-01.txt
 ```
 
 ---
 
-# Deleting a Product
+# Password Recovery(no security questions)
 ```
---- Delete Product ---
-Enter product name to delete: Mango
-Are you sure you want to delete 'Mango'? (y/n): y
-🗑️ 'Mango' deleted successfully.
-```
-
-Undo the deletion:
-```
-↩️ Deletion of 'Mango' undone.
+Select the product that is NOT in stock:
+1. Mango
+2. Milk
+3. Peach
+Your choice (1-3): 3
+✅ Password reset successful!
 ```
 
 ---
 
-# Exporting Inventory
+# File Structure
 ```
-Enter filename to export to (default: export_inventory.csv): exported.csv
-✅ Inventory exported successfully to 'exported.csv'!
+HamiMiniMarket/
+│
+├── main.py           # Main controller with helpers & account logic
+├── inventory.py      # Inventory handling
+├── order.py          # Order & receipt management
+│
+├── users.json        # Saved user accounts
+├── inventory.json    # Product data
+├── orders.json       # Order records
+└── receipts/         # Generated receipts (text files)
 ```
-
----
-
-# Example Input & Output
-
-| Action            | Input                                                  | Output                                 |
-|-------------------|--------------------------------------------------------|----------------------------------------|
-| Add Product       | Name: Milk<br>Category: Dairy<br>Price: 1.2<br>Qty: 10 | ✅ “Milk added successfully!”          |
-| View Products     | (Select 2)                                             | Table showing all items + stock levels |
-| Update Product    | New price: 1.5                                         | ✅ “Product updated successfully!”     |
-| Delete Product    | Name: Milk                                             | 🗑️ “Milk deleted successfully.”        |
-| Undo              | (Select 7)                                             | ↩️ “Deletion of ‘Milk’ undone.”        |
-| Export            | Filename: shop_backup.csv                              | ✅ “Inventory exported successfully.”  |
-
-
-# Behind the Scenes
-- The program uses lists and dictionaries to store products.  
-- Data is automatically saved and loaded from a CSV file named `inventory.csv`.  
-- Input validation ensures no invalid data breaks the program.  
-- `undo_last_change()` safely rolls back the most recent operation.
-
----
 
 # Tech Stack
-- Language: Python 3  
-- Libraries Used:*  
-  - `csv` → for saving and loading data  
-  - `os` → for screen clearing  
+- Python 3    
+- JSON → for saving and loading data
+- File system operations → for receipt & reset
 
 ---
 
-# Conclusion
-The Hami MiniMarket Inventory System is a small but powerful inventory management tool for local stores.  
-It combines usability, data safety, and simplicity — ideal for small shop owners managing stock efficiently.
+# 🧩 Future Improvements
+- Multi-user roles (Admin, Cashier, Viewer)
+- Graphical UI using Tkinter or PyQt
+- Database backend (SQLite/MySQL)
+- Daily sales summary reports
