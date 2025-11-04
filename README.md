@@ -81,13 +81,13 @@ This system solves that by providing a simple, offline, and beginner-friendly in
    ```bash
    python --version
    ```
-2. Download or copy the file `Hamiminimarket.py` to your computer.
-3. (Optional) Open it with any code editor like VS Code, PyCharm, or IDLE if you want to view or edit it.
+2. Download or copy the entire folder `Hamiminimarket` to your computer.
+3. (Optional) Open the files with any code editor like VS Code, PyCharm, or IDLE if you want to view or edit it.
 
 ---
 
 # Running the Program
-1. Open your terminal in the folder containing the file.  
+1. Open your terminal in the folder containing the files.  
 2. Run the script:
    ```bash
    python main.py
@@ -108,7 +108,7 @@ This system solves that by providing a simple, offline, and beginner-friendly in
    4. Manage Orders
    5. Export Inventory
    6. Manage Account
-   7. Exit
+   7. logout
    ```
 ---
 
